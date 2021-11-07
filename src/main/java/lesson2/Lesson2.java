@@ -1,4 +1,4 @@
-package Lesson2;
+package lesson2;
 
 public class Lesson2 {
 
@@ -32,8 +32,8 @@ public class Lesson2 {
      * @return  результат чисел
      */
     public static int calculate(int arg1, int arg2) {
-        int result = arg1 + arg2;
-        return result;  // жгу
+        return arg1 + arg2;
+
     }
 
     public static int multiplyAndSumma(int arg1) {
