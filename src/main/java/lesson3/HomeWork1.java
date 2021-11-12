@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class HomeWork1 {
     public static void main(String[] args) {
         double a, b, c;
+        double discriminant;
 
 
         System.out.println("Вычисление корней квадратного уравнения:");
@@ -12,34 +13,31 @@ public class HomeWork1 {
         System.out.println("Введите коэффициенты a, b и c:");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите первый коэффициент");
+        System.out.println("Введите первый коэффициент a");
         a = in.nextDouble();
-        System.out.println("Введите второй коэффициент");
+        if (a == 0) {
+            System.out.println("Первый коэффициент не может быть 0");
+            System.out.println("Введите первый коэффициент a");
+            a = in.nextDouble();
+        }
+        System.out.println("Введите второй коэффициент b");
         b = in.nextDouble();
-        System.out.println("Введите третий коэффициент");
+        System.out.println("Введите третий коэффициент c");
         c = in.nextDouble();
+        discriminant = ((Math.pow(b, 2)) - (4 * a * c));
 
-        double discriminant = b * b - 4 * a * c;
-
-        if (discriminant == 0) {
-            double ratio;
-            ratio = (int) (-b / (2 * a));
+        if (discriminant < 0) {
+            System.out.println("Нет действительных решений уравнения");
+        } else if (discriminant == 0) {
+            double ratio = (-b / (2 * a));
             System.out.println("Уравнение имеет единственный корень: ratio = " + ratio);
 
-        } else if (discriminant > 0) {
-            double ratio1, ratio2;
-            ratio1 = (float) (-b + Math.sqrt(discriminant)) / (2 * a);
-            ratio2 = (float) (-b - Math.sqrt(discriminant)) / (2 * a);
-            System.out.println("Корень ratio1 = " + ratio1 + "," + " корень ratio2 равен " + ratio2);
-
-        } else if (a == 0) {
-            System.out.println("Первый коэффициент не может быть 0");
-
-        } else if (discriminant < 0) {
-            System.out.println("Нет действительных решений уравнения");
+        } else {
+            double rat1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double rat2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            System.out.println("Первый корень равен " + rat1 + "," + " второй корень равен " + rat2);
 
         }
-
 
     }
 }
