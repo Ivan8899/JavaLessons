@@ -2,7 +2,7 @@ package lesson3;
 
 import java.util.Scanner;
 
-public class HomeWork1 {
+public class HomeWork {
     public static void main(String[] args) {
         double a, b, c;
         double discriminant;
