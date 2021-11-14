@@ -1,12 +1,19 @@
 package lesson3;
 
-import org.w3c.dom.ls.LSOutput;
+import java.util.Scanner;
 
 
 public class Factorial2 {
     public static void main(String[] args) {
-
-        System.out.println("Факториал 5! с использованием рекурсии равен " + factorial(5));
+        System.out.println("Введите число: ");
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        if (n == 0){
+            System.out.println("Факториал " + "!" + n + " с использованием рекурсии равен " + factorial(n));
+        } else {
+            System.out.println("Факториал " + n + "!" + " с использованием рекурсии равен " + factorial(n));
+        }
 
     }
 
@@ -16,5 +23,4 @@ public class Factorial2 {
         }
         return n * factorial(n - 1);
     }
-
 }
