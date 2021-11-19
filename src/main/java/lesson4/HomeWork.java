@@ -15,7 +15,7 @@ public class HomeWork {
     public static double sqrt(double a) {
         double leftPoint = 0;
         double rightPoint = a;
-        double middlePoint = (leftPoint + rightPoint) / 2;
+        double middlePoint;
         double secondaryPoint = a;
         for (; ; ) {
             middlePoint = (leftPoint + rightPoint) / 2;
