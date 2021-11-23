@@ -26,10 +26,6 @@ public class HomeWorkArrayMaxMinAvg {
 
         System.out.println("Среднее число в массиве : " + avgValue(array,a));
 
-
-
-
-
     }
 
     public static double avgValue(double[] array, int a) {
