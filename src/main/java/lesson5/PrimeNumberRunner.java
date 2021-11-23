@@ -15,7 +15,7 @@ public class PrimeNumberRunner {
 
     public static void printPrimeNumber(int threshold) {
         if (threshold <= 2) {
-            System.out.println("Ожидается ввод чисел, больших 1");
+            System.out.println("Ожидается ввод чисел, больших 2");
         }
 
         for (int i = 2; i < threshold; i++) {

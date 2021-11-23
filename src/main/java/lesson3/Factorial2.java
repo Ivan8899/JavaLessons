@@ -9,8 +9,8 @@ public class Factorial2 {
         int n;
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
-        if (n == 0){
-            System.out.println("Факториал " + "!" + n + " с использованием рекурсии равен " + factorial(n));
+        if (n == 0) {
+            System.out.println("Факториал " + n + "!" + " с использованием рекурсии равен " + factorial(n));
         } else {
             System.out.println("Факториал " + n + "!" + " с использованием рекурсии равен " + factorial(n));
         }
