@@ -4,22 +4,23 @@ import java.util.Scanner;
 
 public class HomeWorkFibonacci2 {
     public static void main(String[] args) {
-        int[] array = new int[20];
 
         System.out.println("Вычисление значения последовательности Фибоначчи: ");
-
+        System.out.println("Введите число: ");
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
-
         if (a == 0) {
             System.out.println("Введите число больше 0 :");
+            System.out.println("Введите число: ");
             in.nextInt();
         }
 
-        if (a > 0 && a < 20) {
-            System.out.println("Для числа = " + a + " число Фибоначчи = " + fibonacciTwo(a));
-        } else
+
+        if (a > 2 && a <= 11) {
             System.out.println("Для числа = " + a + " число Фибоначчи = " + fibonacciArray(a - 1));
+        } else {
+            System.out.println("Для числа = " + a + " число Фибоначчи = " + fibonacciTwo(a));
+        }
     }
 
 
@@ -30,14 +31,14 @@ public class HomeWorkFibonacci2 {
         }
         if (a == 2) {
             b = 1;
-            return b;
         }
         return fibonacciTwo(a - 1) + fibonacciTwo(a - 2);
     }
 
+
     public static int fibonacciArray(int a) {
 
-        int[] array = new int[a + 1];
+        int[] array = new int[11];
 
         array[0] = 0;
         array[1] = 1;
@@ -48,5 +49,7 @@ public class HomeWorkFibonacci2 {
         return array[a];
     }
 }
+
+
 
 
