@@ -10,5 +10,12 @@ public class Dog {
     public Dog() {
 
     }
+
+    public Dog(String name, int running, int swim, String voice) {
+        this.name = name;
+        this.running = running;
+        this.swim = swim;
+        this.voice = voice;
+    }
 }
 

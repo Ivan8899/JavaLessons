@@ -1,21 +1,20 @@
 package lesson7.homeWork;
 
 
-public class Tiger {
+public class Tiger extends AnimalsRunner{
     String name;
     int running;
     int swim;
     String voice;
 
-    public void swim() {
-        this.swim = swim;
+    public Tiger() {
     }
 
-    public void run() {
+    public Tiger(String name, int running, int swim, String voice) {
+        this.name = name;
         this.running = running;
-    }
-
-    public void voice() {
+        this.swim = swim;
         this.voice = voice;
     }
+
 }
