@@ -4,52 +4,50 @@ import java.util.Scanner;
 
 public class HomeWorkFibonacci2 {
     public static void main(String[] args) {
-
-        System.out.println("Вычисление значения последовательности Фибоначчи: ");
-        System.out.println("Введите число: ");
-        Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        if (a == 0) {
-            System.out.println("Введите число больше 0 :");
-            System.out.println("Введите число: ");
-            in.nextInt();
-        }
-
-
-        if (a > 2 && a <= 11) {
-            System.out.println("Для числа = " + a + " число Фибоначчи = " + fibonacciArray(a - 1));
-        } else {
-            System.out.println("Для числа = " + a + " число Фибоначчи = " + fibonacciTwo(a));
+        int arrayLength = 50;
+        long[] fibonacciArray = new long[arrayLength];
+        fibonacciArray[0] = 1;
+        fibonacciArray[1] = 1;
+        System.out.println("Приветсвтуем, уважаемый пользователь");
+        int lastIndex = 2;
+        while (true) {
+            int index = getFibonacciIndex(arrayLength);
+            long result;
+            if (fibonacciArray[index] == 0) {
+                fillFibonacciArray(fibonacciArray, lastIndex, index);
+            }
+            result = fibonacciArray[index];
+            System.out.printf("Число стоящее на %d индексе имеет значение %d\n", index, result);
         }
     }
 
-
-    public static int fibonacciTwo(int a) {
-        int b = 0;
-        if (a == 1) {
-            return b;
+    private static void fillFibonacciArray(long[] fibonacciArray, int lastIndex, int index) {
+        System.out.printf("Значение с индексом %d было расчитано и размещено в кэшэ\n", index);
+        for (int i = lastIndex; i <= index; i++) {
+            fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2];
         }
-        if (a == 2) {
-            b = 1;
-        }
-        return fibonacciTwo(a - 1) + fibonacciTwo(a - 2);
     }
 
-
-    public static int fibonacciArray(int a) {
-
-        int[] array = new int[11];
-
-        array[0] = 0;
-        array[1] = 1;
-
-        for (int i = 2; i <= a; i++) {
-            array[i] = array[i - 1] + array[i - 2];
+    private static int getFibonacciIndex(int maxIndex) {
+        System.out.println("Введите позицию в ряде Фибоначчи как целое число:");
+        Scanner scanner = new Scanner(System.in);
+        while (!scanner.hasNextInt()) {
+            String command = scanner.next();
+            if ("exit".equalsIgnoreCase(command)) {
+                System.out.println("Спасибо за участие в программе!");
+                System.exit(0);
+            }
+            System.out.println("Простите, но ввод значения подразумевает целое число");
+            scanner.next();
         }
-        return array[a];
+        int length = scanner.nextInt();
+        if (length < 0) {
+            System.out.printf("Вы указали отрицательное значение: %d, что не допустимо\n", length);
+            return getFibonacciIndex(maxIndex);
+        } else if (length >= 50) {
+            System.out.printf("Вы указали значение большее, чем %d, что не допустимо\n", maxIndex);
+            return getFibonacciIndex(maxIndex);
+        }
+        return length;
     }
 }
-
-
-
-
