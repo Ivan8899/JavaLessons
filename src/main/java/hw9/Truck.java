@@ -1,7 +1,7 @@
 package hw9;
 
 public final class Truck extends Automobile {
-    private final int MAX_CAR_DISTANCE = 1200;
+    private static final int MAX_CAR_DISTANCE = 1200;
 
     public Truck(double distance, String automobileName) {
         super(distance, automobileName);
@@ -18,7 +18,7 @@ public final class Truck extends Automobile {
             System.out.println("Грузовой автомобиль " + automobileName + " проехал " + distance + " км.");
         else {
             System.out.println("Грузовой автомобиль " + automobileName
-                    + " проехал 1200 км и у него закончился бензин.");
+                    + " проехал " + MAX_CAR_DISTANCE + " км и у него закончился бензин.");
         }
     }
 }
