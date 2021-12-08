@@ -8,15 +8,15 @@ public class AutoRunner {
         Automobile volga = new Car(500, "Волга");
         Automobile niva = new Car(500, "Нива");
 
-        Automobile toyota = new Truck(1200, "Газель");
-        Automobile hyundai = new Truck(1200, "Газ");
-        Automobile generalMotors = new Truck(1200, "Краз");
-        Automobile geely = new Truck(1200, "Урал");
+        Automobile gazel = new Truck(1200, "Газель");
+        Automobile gaz = new Truck(1200, "Газ");
+        Automobile kraz = new Truck(1200, "Краз");
+        Automobile ural = new Truck(1200, "Урал");
         Automobile kamaz = new Truck(1200, "Камаз");
 
 
         Automobile[] vehicles = new Automobile[]{uaz, lada, luaz, volga, niva,
-                toyota, hyundai, generalMotors, geely, kamaz};
+                gazel, gaz, kraz, ural, kamaz};
         for (int i = 0; i < vehicles.length; i++) {
             vehicles[i].move();
         }
