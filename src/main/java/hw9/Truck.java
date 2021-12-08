@@ -1,7 +1,7 @@
 package hw9;
 
 public final class Truck extends Automobile {
-    private final double MAX_CAR_DISTANCE = 1200;
+    private final int MAX_CAR_DISTANCE = 1200;
 
     public Truck(double distance, String automobileName) {
         super(distance, automobileName);
