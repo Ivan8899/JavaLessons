@@ -3,13 +3,13 @@ package hw9;
 public final class Truck extends Automobile {
     private final double MAX_CAR_DISTANCE = 1200;
 
-        public Truck(double distance, String automobileName) {
+    public Truck(double distance, String automobileName) {
         super(distance, automobileName);
 
     }
 
     public void truckDistance() {
-       super.distance = Math.round(Math.random() * 1500);
+        super.distance = Math.round(Math.random() * 1500);
     }
 
     public void move() {
